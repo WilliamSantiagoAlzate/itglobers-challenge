@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { getFirstItem } from '../helpers/getFirstItem';
-
 import { menu } from '../data/menu.json';
 import Header from './Header';
 import Menu from './Menu';
 import Form from './Form';
+import LightBox from './LightBox';
 
 const App = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [currentMenuItem, setCurrentMenuItem] = useState(getFirstItem(menu));
+  const [showLightBox, setShowLightBox] = useState(false);
   const [invalidForm, setInvalidForm] = useState(false);
   const [formValue, setFormValue] = useState({
     name: '',
@@ -36,6 +37,16 @@ const App = () => {
       formValue.age
     ) {
       console.log(formValue);
+      setShowLightBox(true);
+      setFormValue({
+        name: '',
+        email: '',
+        phone: '',
+        age: ''
+      });
+      setTimeout(() => {
+        setShowLightBox(false);
+      }, [5000])
     } else {
       setInvalidForm(true);
     }
@@ -57,6 +68,9 @@ const App = () => {
         submitForm={submitForm}
         invalidForm={invalidForm}
       />
+      {showLightBox && 
+        <LightBox message={'Tu información fue enviada con éxito, estaremos en contacto contigo'} />
+      }
     </main>
   )
 }

@@ -1,0 +1,30 @@
+.lightbox {
+  @include cover;
+  @include flex-center;
+  animation: fadeOut ease 5s;
+  background-color: rgba($color: $gray3, $alpha: 0.5);
+
+  &__container {
+    width: 330px;
+    background-color: $green;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  &__text {
+    color: $white;
+    font-size: 2rem;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
