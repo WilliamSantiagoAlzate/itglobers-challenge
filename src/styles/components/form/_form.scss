@@ -45,4 +45,11 @@
       color: $white;
     }
   }
+
+  &__error {
+    margin-top: 5px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    color: $red;
+  }
 }

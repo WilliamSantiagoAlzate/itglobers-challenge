@@ -1,8 +1,11 @@
+import { Validator } from '../helpers/validator';
+
 const Form = ({ 
   currentMenuItem,
   formValue,
   handlerInputs,
-  submitForm 
+  submitForm,
+  invalidForm 
 }) => {
   return (
     <form className="form" onSubmit={submitForm}>
@@ -13,7 +16,7 @@ const Form = ({
         <label className="form__label" htmlFor="name">
           Nombre completo
         </label>
-        <input 
+        <input
           className="form__input" 
           id="name" 
           name="name" 
@@ -21,6 +24,12 @@ const Form = ({
           value={formValue.name}
           onChange={({ target }) => handlerInputs(target)} 
         />
+        {Validator.pattern(/[$%&|<>#!]/)(formValue.name) && formValue.name &&
+          <p className="form__error">No debe contener caracteres especiales</p>
+        }
+        {invalidForm && !formValue.name &&
+          <p className="form__error">Campo requerido</p>
+        }
       </section>
       <section className="form__section">
         <label className="form__label" htmlFor="email">
@@ -34,6 +43,13 @@ const Form = ({
           value={formValue.email}
           onChange={({ target }) => handlerInputs(target)} 
         />
+        {!Validator.pattern(/^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/)(formValue.email) 
+        && formValue.email &&
+          <p className="form__error">Email invalido</p>
+        }
+        {invalidForm && !formValue.email &&
+          <p className="form__error">Campo requerido</p>
+        }
       </section>
       <section className="form__section">
         <label className="form__label" htmlFor="phone">
@@ -47,6 +63,12 @@ const Form = ({
           value={formValue.phone}
           onChange={({ target }) => handlerInputs(target)} 
         />
+        {!Validator.pattern(/^\d*$/)(formValue.phone) && formValue.phone &&
+          <p className="form__error">Número de celular invalido</p>
+        }
+        {invalidForm && !formValue.phone &&
+          <p className="form__error">Campo requerido</p>
+        }
       </section>
       <section className="form__section">
         <label className="form__label" htmlFor="age">
@@ -60,6 +82,15 @@ const Form = ({
           value={formValue.age}
           onChange={({ target }) => handlerInputs(target)} 
         />
+        {(Validator.min(18)(formValue.age) || Validator.max(100)(formValue.age)) && formValue.age &&
+          <p className="form__error">La edad debe estar entre 18 y 100 años</p>
+        }
+        {!Validator.pattern(/^\d*$/)(formValue.age) && formValue.age &&
+          <p className="form__error">Número de edad invalido</p>
+        }
+        {invalidForm && !formValue.age &&
+          <p className="form__error">Campo requerido</p>
+        }
       </section>
       <button className="form__button" type="submit">
         Consultar
