@@ -4,10 +4,14 @@ This is a website with a form with validation and a responsive menu. This projec
 
 ## Live demo
 
-Check the project live demo on this link 
+Check the project live demo on this link [Demo](https://itglobers-challenge.web.app/)
 
 ## Preview Image
 
+![image](https://user-images.githubusercontent.com/55466321/127718830-273e758c-e14a-41f0-84bb-6f900b93f093.png)
+
+![image](https://user-images.githubusercontent.com/55466321/127718856-34f99a32-d512-4043-9e24-c5152048c33e.png)
+![image](https://user-images.githubusercontent.com/55466321/127718869-2acac14c-8417-46d6-a551-c6d83f01d472.png)
 
 ## Libraries used
 
