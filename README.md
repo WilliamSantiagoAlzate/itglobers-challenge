@@ -1,6 +1,39 @@
 # IT Globers - challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a website with a form with validation and a responsive menu. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Live demo
+
+Check the project live demo on this link 
+
+## Preview Image
+
+
+## Libraries used
+
+### React
+
+[v17.0.2](https://reactjs.org/)
+
+React was used to add individual components.
+
+### Sass
+
+[v1.36.0](https://sass-lang.com/)
+
+Sass was used to add styles to the project.
+
+### Jest
+
+[v26.6](https://jestjs.io/)
+
+Jest was added to do unit testing.
+
+### Enzyme
+
+[v3.11.0](https://enzymejs.github.io/enzyme/)
+
+Enzyme was added to do unit testing for react components.
 
 ## Author
 
