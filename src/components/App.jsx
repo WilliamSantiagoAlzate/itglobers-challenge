@@ -30,6 +30,10 @@ const App = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    const errorLabels = document.querySelector('.form__error');
+    if (errorLabels) {
+      return;
+    }
     if (
       formValue.name &&
       formValue.email &&
