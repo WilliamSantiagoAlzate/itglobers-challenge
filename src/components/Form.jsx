@@ -82,7 +82,7 @@ const Form = ({
           value={formValue.age}
           onChange={({ target }) => handlerInputs(target)} 
         />
-        {(Validator.min(18)(formValue.age) || Validator.max(100)(formValue.age)) && formValue.age &&
+        {(!Validator.min(18)(formValue.age) || !Validator.max(100)(formValue.age)) && formValue.age &&
           <p className="form__error">La edad debe estar entre 18 y 100 años</p>
         }
         {!Validator.pattern(/^\d*$/)(formValue.age) && formValue.age &&
