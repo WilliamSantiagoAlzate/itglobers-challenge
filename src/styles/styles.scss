@@ -4,6 +4,8 @@
 @import "./base/mixins";
 
 // Import components
+@import "./components/header/header";
+@import "./components/menu/menu";
 
 // Import desktop queries
 @media (min-width: 920px) {
